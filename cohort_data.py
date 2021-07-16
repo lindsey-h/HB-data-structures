@@ -14,10 +14,17 @@ def all_houses(filename):
     Return:
       - set[str]: a set of strings
     """
-
+    file = open(filename)
     houses = set()
 
-    # TODO: replace this with your code
+    for line in file:
+        
+        line = line.rstrip()
+        student_info = line.split("|")  # ["Harry", "Potter", "Gryff"...]
+        house = student_info[2] 
+
+        if house:
+            houses.add(house)
 
     return houses
 
@@ -50,7 +57,33 @@ def students_by_cohort(filename, cohort='All'):
       - list[list]: a list of lists
     """
 
+    file = open(filename)
     students = []
+    # Spring_2015 = list()
+    # Summer_2015 = set()
+    # Fall_2015 = set()
+    # Winter_2015 = set()
+    # Spring_2016 = set()
+
+    #students_by_cohort(filename, cohort='All')
+    #filename = chort_data.txt
+    #cohort = string ('Spring 2015'.. etc)
+
+    for line in file:
+        
+        line = line.rstrip()
+        student_info = line.split("|")  # ["Harry", "Potter", "Gryff"...]
+        student_cohort = student_info[-1] 
+        student_name = student_info[0] + " " + student_info[1]
+
+        if cohort == student_cohort:
+            students.append(student_name)
+        elif cohort == 'All':
+            students.append(student_info[]
+
+    # return houses
+
+    # students = []
 
     # TODO: replace this with your code
 
